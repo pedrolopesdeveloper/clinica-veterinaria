@@ -1,0 +1,77 @@
+:root {
+    --font-original: 'Montserrat', sans-serif;
+    --cor-primary: #FF9A6C;
+    --cor-secundary: #FFFFFF;
+    --cor-terciary: #FF725E;
+}
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+/*NavBar*/
+
+.navbar {
+    background-color: var(--cor-primary);
+}
+
+#inicio {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 24px 45px 128px 80px;
+    position: relative;
+    justify-content: space-evenly;
+}
+
+h1, h2 {
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.paragrafo {
+    line-height: 150%;
+    margin-bottom: 32px;
+}
+
+.botao {
+    background-color: #FF725E;
+    border-radius: 8px;
+    color: #FFFFFF;
+    padding: 16px 32px;
+    text-decoration: none;
+}
+
+.botao-transparente {
+    background-color: transparent;
+    color: #FF725E;
+    padding: 16px 32px;
+    text-underline-offset: 6px;
+}
+
+.absolute {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -10;
+}
+
+.cards {
+    padding: 24px 32px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+legend {
+    text-align: center;
+}

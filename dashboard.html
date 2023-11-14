@@ -12,78 +12,118 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <!--Dashboard-->
-    <section class="homeblock-stats py-5" id="stats">
-        <div class="container py-md-5 py-4 HomePageStats">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="position-relative">
-                        <h1 class="title-style mb-2">Nossas atividades e experiência</h1>
-                    </div>
-                    <p>
-                        Explore as estatísticas abaixo para obter uma visão mais detalhada de nosso trabalho. Juntos, continuamos a construir um mundo onde cada animal é tratado com amor e respeito, promovendo uma vida saudável e feliz para os membros peludos da nossa comunidade. Na PetLife, somos mais do que uma clínica veterinária; somos uma família dedicada a fazer a diferença na vida deles.
-                    </p>
-                    <div class="row mt-4 pt-2">
-                        
-                        <!--Estatisticas Clientes-->
-                        <a href="crud-cliente.php" class="col-6 border cards bg-secondary">
-                        <div >
-                            <div class="counter color-bg-1">
-                                <div class="count-title d-flex align-items-center">
-                                    <div class="timer count-number" data-to="630" data-speed="1500"><?php echo $numClientes?></div>
-                                    
-                                </div>
-                                <p class="count-text">Clientes</p>
-                            </div>
-                        </div>
+    <!--Sidebar-->
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-lg-2 min-vh-100 d-flex flex-column justify-content-around navbar-color">
+                <div class="navbar-color p-2">
+                    <div class="container">
+                        <a class="navbar-brand" href="#">
+                            <img src="img/logo-white.svg" alt="Bootstrap" width="100">
                         </a>
-
-                        <!--Estatisticas Consultas-->
-                        <a href="crud-agendamento.php" class="col-6 border cards bg-secondary">
-                        <div >
-                            <div class="counter color-bg-2">
-                                <div class="count-title d-flex align-items-center">
-                                    <div class="timer count-number" data-to="80" data-speed="1500"><?php echo $numAgendamentos?></div>
-                                    
-                                </div>
-                                <p class="count-text">Consultas</p>
-                            </div>
-                        </div>
-                    </a>
-
-                        <!--Estatisticas Pacientes-->
-                        <a href="crud-agendamento.php" class="col-6 mt-4 border cards bg-secondary">
-                        <div >
-                            <div class="counter color-bg-3">
-                                <div class="count-title d-flex align-items-center">
-                                    <div class="timer count-number" data-to="820" data-speed="1500"><?php echo $numPacientes?></div>
-                                  
-                                </div>
-                                <p class="count-text text-d-none">Total de Pacientes</p>
-                            </div>
-                        </div>
-                        </a>
-
-                        <!--Estatisticas Usuarios do sistema-->
-                        <div class="col-6 mt-4 border cards bg-secondary">
-                            <div class="counter color-bg-4">
-                                <div class="count-title d-flex align-items-center">
-                                    <div class="timer count-number" data-to="90" data-speed="1500"><?php echo $numUsuarios?></div>
-                                  
-                                </div>
-                                <p class="count-text">Usuários do sistema</p>
-                            </div>
-                        </div>
-                        
-                    </div>
+                      </div>
+                    <ul class="nav nav-pills flex-column mt-4">
+                        <li class="nav-item py-2 py-sm-0">
+                            <a href="#" class="nav-link text-white">
+                                <i class="fs-5 fa fa-gauge"></i><span class="texto fs-5 ms-3 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item py-2 py-sm-0">
+                            <a href="dashboard.html" class="nav-link text-white">
+                                <i class="fs-5 fa fa-gauge"></i><span class="texto fs-5 ms-3 d-none d-sm-inline">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item py-2 py-sm-0">
+                            <a href="#" class="nav-link text-white">
+                                <i class="fs-5 fa-solid fa-calendar-days"></i><span class="texto fs-5 ms-3 d-none d-sm-inline">Agendamento</span>
+                            </a>
+                        </li>
+                        <li class="nav-item py-2 py-sm-0">
+                            <a href="#" class="nav-link text-white">
+                                <i class="fs-5 fa-solid fa-paw"></i><span class="texto fs-5 ms-3 d-none d-sm-inline">Pacientes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item py-2 py-sm-0">
+                            <a href="#" class="nav-link text-white">
+                                <i class="fs-5 fa fa-users"></i><span class="texto fs-5 ms-3 d-none d-sm-inline">Clientes</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-xl-5 col-lg-6 offset-xl-1 ps-xl-0 mt-lg-0 mt-5">
-                    
+                <div class="dropdown justify-content-center align-items-center">
+                    <button class="btn border dropdown-toggle text-white" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa-solid fa-arrow-right-from-bracket text-white"></i><span class="fs-5 ms-2 text-white">Logout</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--Fim da sidebar-->
+    <!--Dashboard-->
+        <div class="container mt-5">
+            <div class="row ms-5">
+                <div class="col-6">
+                    <div class="position-relative">
+                        <h1 class="title-style mb-2">Nossas atividades e experiências:</h1>
+                    </div>
+                        <p>
+                            Explore as estatísticas abaixo para obter uma visão mais detalhada de nosso trabalho. Juntos, continuamos a construir um mundo onde cada animal é tratado com amor e respeito, promovendo uma vida saudável e feliz para os membros peludos da nossa comunidade. <br> Na PetLife, somos mais do que uma clínica veterinária; somos uma família dedicada a fazer a diferença na vida deles.
+                        </p>
+                    <div class="row mt-4 pt-2">
+                        <!--Estatisticas Clientes-->
+                        <a href="crud-cliente.php" class="col-6 border cards bg-primary-subtle">
+                            <div>
+                                <div class="counter color-bg-1">
+                                    <div class="count-title d-flex align-items-center">
+                                        <div class="timer count-number" data-to="630" data-speed="1500"><?  php echo $numClientes?></div>
+                                    </div>
+                                        <p class="count-text">Clientes</p>
+                                    </div>
+                            </div>
+                        </a>
+                        <!--Estatisticas Consultas-->
+                        <a href="crud-agendamento.php" class="col-6 border cards bg-primary-subtle">
+                            <div >
+                                <div class="counter color-bg-2">
+                                    <div class="count-title d-flex align-items-center">
+                                        <div class="timer count-number" data-to="80" data-speed="1500"><?php echo $numAgendamentos?></div>
+                                    </div>
+                                        <p class="count-text">Consultas</p>
+                                </div>
+                            </div>
+                        </a>
+                        <!--Estatisticas Pacientes-->
+                        <a href="crud-agendamento.php" class="col-6 mt-4 border cards bg-primary-subtle">
+                            <div>
+                                <div class="counter color-bg-3">
+                                    <div class="count-title d-flex align-items-center">
+                                        <div class="timer count-number" data-to="820" data-speed="1500"><?php echo $numPacientes?></div>
+                                    </div>
+                                        <p class="count-text text-d-none">Total de Pacientes</p>
+                                </div>
+                            </div>
+                        </a>
+                        <!--Estatisticas Usuarios do sistema-->
+                        <a href="#" class="col-6 mt-4 border cards bg-primary-subtle">
+                            <div>
+                                <div class="counter color-bg-4">
+                                    <div class="count-title d-flex align-items-center">
+                                        <div class="timer count-number" data-to="90" data-speed="1500"><?php echo $numUsuarios?></div>
+                                    </div>
+                                        <p class="count-text">Usuários do sistema</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="col-xl-5 col-lg-6 offset-xl-1 ps-xl-0 mt-lg-0 mt-5">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
+            
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </body>
 </html>
